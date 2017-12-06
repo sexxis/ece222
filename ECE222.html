@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ECE222 Questions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css" integrity="sha384-B41nY7vEWuDrE9Mr+J2nBL0Liu+nl/rBXTdpQal730oTHdlrlXHzYMOhDU60cwde" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js" integrity="sha384-L9gv4ooDLrYwW0QCM6zY3EKSSPrsuUncpx26+erN0pJX4wv1B1FzVW1SvpcJPx/8" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/contrib/auto-render.min.js" integrity="sha384-RkgGHBDdR8eyBOoWeZ/vpGg1cOvSAJRflCUDACusAAIVwkwPrOUYykglPeqWakZu" crossorigin="anonymous"></script>
+    <style>
+        li{
+            margin: 10px;
+        }  
+        html,body{
+            width: 100vw;
+            height 100vh;
+        }
+    </style>
+  </head>
+  <body class="katex">
+    <h1>ECE222 Question</h1>
+    <p>
+    <ol>
+      <li>Given the unsigned number \(b_nb_{n-1}…b_0\), what is the value of that number?<br />
+        \(V=b_n\times2^n+b_{n-1}\times2^{n-1}+…+b_0\times2^0\)
+      </li>
+      <li>
+        Given the 1’s signed number \(b_nb_{n-1}…b_0\), what is the value of that number?<br />
+        \(V= \begin{cases}
+        b_{n-1}\times2^{n-1}+…+b_0\times2^0 & if\ b_n=0\\
+        -b_{n-1}\times2^{n-1}+…+b_0\times2^0 & if\ b_n=1
+        \end{cases}
+        \)
+      </li>
+      <li>
+        Given the 2’s signed number \(b_nb_{n-1}…b_0\), what is the value of that number?<br />
+        \(V= \begin{cases}
+        b_{n-1}\times2^{n-1}+…+b_0\times2^0 & if\ b_n=0\\
+        b_{n-1}\times2^{n-1}+…+b_0\times2^0-2^{n-1} & if\ b_n=1
+        \end{cases}
+        \)
+      </li>
+      <li>
+        What are the 5 generations in computing?<br />
+        <ol>
+          <li>
+            Generation 0<br />
+            Mechanical computers, Analytical Engine, first digital machine by Ada Lovelace, Charles Babbage.
+          </li>
+          <li>
+            Generation 1: Vacuum tubes<br />
+          </li>
+          <li>
+            Generation 2: Transistors<br />
+          </li>
+          <li>
+            Generation 3: Integrated circuits<br />
+          </li>
+          <li>
+            Generation 4: Very Large Scale Integration<br />
+          </li>
+          <li>
+            Generation 5: VLSI,Gallium Arsenide, Optical Techs
+          </li>
+        </ol>
+      </li>
+      <li>
+        What are the three basic components of a computer?<br />
+        <ul>
+          <li>
+            Input/Output
+          </li>
+          <li>
+            CPU
+          </li>
+          <li>
+            Memory
+          </li>
+        </ul>
+      </li>
+      <li>
+        What are the two ways you can organize a Bus structure?<br/>
+        Single Bus: All components are connected by a single set of wires<br/>
+        Multiple Bus: Components are not all connected together. There are multiple sets of wires
+      </li>
+      <li>
+        How is memory divided?<br />
+        There are fixed sized words of data that can be referenced to by their memory address.
+      </li>
+      <li>
+        What are the two ways you can assign bits by their position?<br />
+        Big-Endian: the lower bytes addresses are used as MSBs<br />
+        Little-Endian: the lower bytes addresses are used as LSBs
+      </li>
+      <li>
+        What are the two basic memory operations?<br />
+        Load (Read,Fetch) get data from a memory location(address)<br />
+        Store (Write) transfer data from the CPU to a memory location
+      </li>
+      <li>
+        What is RISC versus CISC?<br />
+        RISC (Reduced Instruction Set Computer): small set of instructions(each are a word) with few addressing options, but fast and efficient and easier to design.<br />
+        CISC (Complex Instruction Set Computer): lots of instructions (some more than a word), many addressing options, smaller programs.
+      </li>
+      <li>
+        What are the two different Computer Architectures?<br />
+        Harvard Architecture: The ALU, the memory, and the I/O components are all connected to the control unit by multiple buses<br />
+        Von Neumann Architecture: the control unit and the ALU are regrouped inside the CPU, the memory unit is connected to the CPU by a bus, the input and output components are connected to both the CPU and the memory unit.
+      </li>
+      <li>
+        What comes first in memory: Data or Program Code?<br />
+        Program code comes first in memory.
+      </li>
+      <li>
+        What are registers in the CPU, and what do they do?<br />
+        General-purpose registers: There are n general purpose registers for fast program execution<br />
+        Program Counter: Contains the memory address of the next instruction to be fetched. It is incremented before every execution.<br />
+        Stack Pointer: Contains the memory location of the Top of the Stack.<br />
+        Return address: Contains the memory location of where a subroutine has to return<br />
+        Instruction Counter: Contains the data of the next instruction to be executed.<br />
+        Memory Address Register (MAR): Holds the memory address that needs to be accessed (either for reading or writing)<br />
+        Memory Data Register (MDR): Holds the data that has been read from memory or that needs to be written in memory<br />
+        Current Program Status Register (CPSR): Contains the arithmetic flags, Interrupt disable bits, Processor mode bits
+      </li>
+      <li>
+        What are the most common flags triggered by conditional instructions?<br />
+        N (negative): Set if the MSB is 1, reset otherwise<br />
+        Z (zero): Set if the result is 0, reset otherwise<br />
+        V (overflow): Set if the result of signed arithmetic can't be represented in a word<br />
+        C (carry): Set if the result of unsigned arithmetic can't be represented in a word<br />
+      </li>
+      <li>
+        What are all the addressing modes?<br />
+        Immediate: literal value. [Ins #Value] Effective Address = Value<br />
+        Register: general purpose register. [Ins R] EA = R<br />
+        Absolute: memory location. [Ins LOC] EA = LOC<br />
+        Indirect: Using the data from a register or a memory location to find another memory location. [Ins (LOC) or (R)] EA = (LOC) or (R)<br />
+        Index: indexed register. [Ins i(R)] EA = (R) + i<br />
+        Base with Index: multiple registers. [Ins (R1,R2)] EA = (R1) + (R2)<br />
+        Base with Index and offset: multiple registers indexed. [Ins i(R1,R2)] EA = (R1) + (R2) + i<br />
+        Relative: Get data from a previous line in the program. [Ins X(PC)] EA = (PC) + X<br />
+        AutoIncrement: Increments register after used. [Ins (R)+] EA = (R), R += inc<br />
+        AutoDecrement: Decrements register after used. [Ins -(R)] R -= inc, EA = (R)<br />
+      </li>
+      <li>
+        What is the word size of the ARM processor?<br />
+        word: 32bits, byte: 8bits, halfword: 16bits
+      </li>
+      <li>
+        How many general purpose registers are in the ARM processor?<br />
+        13 (R0-R12) and Stack Pointer (R13 or SP), Return Address (R14), and Program Counter (R15 or PC)
+      </li>
+      <li>
+        What are the 6 operating modes in ARM?<br />
+        User: the main program is executed<br />
+        Fast Interrupt Mode (FIQ): ... CHANGE ME<br />
+        Normal Interrupt (IRQ): ... CHANGE ME<br />
+        Supervisor: ... CHANGE ME<br />
+        Abort: Handles memory access violations<br />
+        Undefined: Handles undefined instructions
+      </li>
+      <li>
+        What is writeback in ARM?<br />
+        Preindexed writeback: Ins ... [R,#Val]! EA = (R) + Val, (R) = (R) + 4<br />
+        Postindexed writeback: Ins ... [R],#Val EA = (R), (R) = (R) + 4<br />
+      </li>
+      <li>
+        How many bits are availble in ARM Addressing?<br />
+        Immediate: halfword or 12bits<br />
+        Indexing: 12 bits<br />
+      </li>
+      <li>
+        How do you scale addresses and values in ARM?<br />
+        LSL: Shift bits left Ins ... [R1,-R2, LSL #Val] \((R0) = ((R1) - (2^{Val}\times (R2))), (R1) = ((R1)-(2^{Val}}\times(R2)))\)
+      </li>
+      <li>
+        How many bits are available for branching offset in ARM?<br />
+        24 bits 2's complement signed
+      </li>
+      <li>
+        Are flags set automatically in ARM?<br />
+        No. You need to use special instructions. e.g ADDS
+      </li>
+      <li>
+        Write an ARM program that sums a list of N numbers starting a memory location NUMB1 and stores it in memory location SUM.<br />
+        <code>
+        &emsp;&emsp;&emsp;LDR R1, N<br />
+        &emsp;&emsp;&emsp;LDR R2, =NUMB1<br />
+        &emsp;&emsp;&emsp;MOV R0, #0<br />
+        Loop<br />
+        &emsp;&emsp;&emsp;LDR R3, [R2],#4<br />
+        &emsp;&emsp;&emsp;ADD R0, R0, R3<br />
+        &emsp;&emsp;&emsp;SUBS R1, R1, #1<br />
+        &emsp;&emsp;&emsp;BGT Loop<br />
+        &emsp;&emsp;&emsp;STR R0, SUM
+        </code>
+      </li>
+      <li>
+        How do you push something on the stack in ARM?<br />
+        You decrement SP by 4 (bytes) and write data at SP.<br />
+        <code>STR R0, [R13,#-4]!</code>
+      </li>
+      <li>
+        How do you create a subroutine in ARM?<br />
+        <code>
+          LISTADD<br />
+          &emsp;&emsp;&emsp;STMFD R13!,{R3,R14}<br />
+          &emsp;&emsp;&emsp;MOV R0,#0<br />
+          LOOP<br />
+          &emsp;&emsp;&emsp;LDR R3,[R2],#4<br />
+          &emsp;&emsp;&emsp;ADD R0,R0,R3<br />
+          &emsp;&emsp;&emsp;SUBS R1,R1,#1<br />
+          &emsp;&emsp;&emsp;BGT LOOP<br />
+          &emsp;&emsp;&emsp;LDMFD R13!,{R3,R15}
+          // R0 is the sum returned
+        </code>
+      </li>
+      <li>
+        What is AREA and ENTRY in ARM?<br />
+        AREA: specifies the start of instructions and data<br />
+        ENTRY: specifies the point where the program execution starts
+      </li>
+      <li>
+        What is DCD and EQU in ARM?<br />
+        DCD: Stores a value at memory location. e.g SUM DCD 0<br />
+        EQU: Macro
+      </li>
+      <li>
+        What are the possible operations on I/O Systems?<br />
+        Select device<br />
+        Transfer data<br />
+        Timing/Sync
+      </li>
+      <li>
+        What are the type of transfers?<br />
+        Parallel: Multiple bits transferred simultaneously, high speed, $$$, problems with long distance<br />
+        Serial: Single wire to send data one bit at a time, slower speed, $, synchronous or asynchronous
+      </li>
+      <li>
+        What is synchronous serial?<br />
+        Data is sent along with a clock signal so receiver know when data is valid. Higher speed but requires additional lines
+      </li>
+      <li>
+        What is asynchronous serial?<br />
+        No clock signal is sent. Sender and receiver must agree on baud rate (bps). Special signaling is required to synchronize sender/receiver.
+      </li>
+      <li>
+        How do directions work in Serial?<br />
+        Simplex: One way direction<br />
+        Half Duplex: one way OR the other at a time<br />
+        Full Duplex: bidirectional connection
+      </li>
+      <li>
+        How can you access your I/O devices?<br />
+        Special Instruction: Useful with 2 bus architecture where all devices are connected to the CPU<br />
+        Memory Locations: Useful with 1 bus architectures when your devices are connected to memory
+      </li>
+      <li>
+        What is in an I/O Device?<br />
+        ADDR Decoder: Connected to the ADDR bus like memory.<br />
+        Control: Get Instruction e.g Read, write<br />
+        Data Register: Contains the data about to be read/written<br />
+        Status Register: Contains the interrupt disable bits, status bits (ready or not) <br />
+      </li>
+        <li>
+        What is Program Controlled I/O (PCI/O)? <br/>
+        A procedure checks device's status then moves data (in or out). Slow because the CPU is tied up. Faster devices will cause problems.
+        </li>
+        <li>
+        What is a Direct Memory Access Controller (DMAC)?<br/>
+        Unit that takes control of the memory bus, store data from I/O device directly in memory and wait for next byte/word to arrive. Connected to the memory bus and to an I/O Controller. The CPU provides the start address in memory, the word count, the function (Read/Write) and the address of I/O Device (if required).
+        </li>
+        <li>
+        What is inside a DMAC?<br/>
+        Data Count Register: Contains the number of DMA data transfers to be performed. e.g amount of words<br/>
+        Data Register: Contains the data about to be read/written<br/>
+        Address Register (ADDR): Address of the unit on the memory bus<br/>
+        </li>
+        <li>
+        What are the three different architectures for DMACs?<br/>
+        Detached: Single memory bus with all devices and DMAC connected<br/>
+        Integrated: I/O Devices are connected directly to the DMAC, DMAC connected to single memory bus<br/>
+        I/O Bus: DMAC connected to memory bus and I/O Bus, All I/O devices connected to I/O bus
+        </li>
+        <li>
+        How does PCI/O compare to DMA?<br/>
+        PCI/O : $ Simple Slow CPU tied up<br/>
+        DMA: $$$ Requires facilities for Address generators, control signals, data bus system. Large for large amount of data stored into continuous memory locations. Required Bus arbitration (Who controls the memory bus). 
+        </li>
+        <li>
+        What is an Interrupt Request (IRQ)?<br/>
+            Exception thrown when an I/O device receives data. Interrupts the user to run the Interrupt Service Routine and then gives back control to the user. Needs IRQ line(s).
+        </li>
+        <li>
+        What are the architectures with IRQ Lines?<br/>
+        Single IRQ Line: CPU pools status bit of each device, priority assigned by order, Slow, all device connected to a single line, no multiple requests.<br/>
+        Multiple IRQ Lines: Has several different IRQ lines (for each priority). Priority assigned to various lines. Service higher priority requests first.
+        </li>
+        <li>
+        What are Vectored Interrupts?<br/>
+        Devices indicate to CPU where to find ISR start address. Requires an INTR vector between CPU and device.
+        </li>
+        <li>
+        What is Daisy-Chain hardware polling?<br/>
+        The ACK signal is connected to one device, which transmits it to another and so on until interrupt device found. Then return through next devices to CPU (if Vectored, return is ISR address).
+        </li>
+        <li>
+        How are Interrupts controlled?<br/>
+        CPU: Enabling of interrupts(ACK), Priority structure, Masking of interrupts<br/>
+        Device: Enable IRQ bit in control register
+        </li>
+        <li>
+        How do IRQs work in ARM?<br/>
+        There are two interrupt lines (I and F) which can be disabled in the CPSR.<br/>
+        User mode is not priviledged and cannot manipulate these bits<br/>
+        System mode and the five exception modes are privileged
+        </li>
+        <li>
+        What are the 7 types od exceptions in ARM?<br/>
+        1: Powerup/reset-> enters supervisor mode
+        2: Data access violation (abort)
+        3: Fast Interrupt (FIQ)
+        4: Ordinary interrupt (IRQ)
+        5: Instruction access violation (abort)
+        6: Unimplemented Instruction (undefined)
+        7: ...
+        ?: Software interrupt-> enters supervisor mode
+        </li>
+        <li>
+        What is FIQ used for?<br/>
+        Few devices that require urgent service. General purpose registers(R8-R12, R13, R14) are replaced with banked registers after the ISR.
+        </li>
+        <li>
+        What is IRQ used for?<br/>
+        Used for "normal" interrupts. Only R13/14 are replaced with banked registers after ISR executed. Must push/pop registers to change them.
+        </li>
+        <li>
+        What is register banking?<br/>
+         Purpose: Not push/pop on memory (because it's slow)
+         Register banking is having multiple registers linked to the same memory address. When an exception occur, a switch is made to one of 5 exception modes (IRQ, FIQ, Undefined, Abort, supervisor) with some registers replaced with banked registers.
+        </li>
+        <li>
+        How does the memory bus work?<br/>
+        It contains three classes of lines:<br/>
+            Data: Data transferred<br/>
+            Address: Memory target<br/>
+            Control: Read/Write etc.<br/>
+        At any time, there is only one device that controls the bus: Bus Master<br/>
+        Bus Arbitration is required if there are multiple devices that can be Bus Master<br/>
+        Two main methods:<br/>
+        Centralized Arbitration<br/>
+        Distributed Arbitration<br/>
+        </li>
+        <li>
+            What is Centralized Arbitration?<br>
+            CPU supervises control of bus. E.g multiple DMAC in daisy chain
+        </li>
+        <li>
+            What is Distributed Arbitration? <br/>
+            One or more devices activate the Start Arbitration signal and each device bids for control of the bus by placing the bits of its ID on an arbitration bus. All competing devices look for their address on the bus. The highest address wins control and that device will drop out of competition until all devices have had a chance to control the bus.
+        </li>
+        <li>
+            What are the specifications of a synchronous Bus?<br/>
+            Common clock line for all devices that is long enough to accomodate slowest device. Memory clock is much slower than CPU clock (1 memCyc = 4-5 cpuCyc). Need to add signals to allow device to tell master when it is ready.
+        </li>
+        <li>
+            What are the specifications of an async Bus?<br/>
+            Faster, master and slave use a handshake to do transfers. Need Master-ready and Slave-ready signals.
+        </li>
+        <li>
+            What is a device's interface?<br/>
+            Inputs to registers can always listen to the bus.  Only clocked when addressed.<br/>
+            Output from register are only transferred to the bus when required(tri-state drivers)<br/>
+            Each device will require address decoding and control signal generation.
+        </li>
+        <li>
+            Draw an 8-bit parallel interface.<br/>
+            <img src="img/8bitParallel.JPG" width="500px"/>
+        </li>
+        <li>
+            What is a Peripheral Component Interconnect (PCI) Bus?<br/>
+            One of the first standard interface independent of processor.<br/>
+            Device attached to PCI bus "appear" as if they are connected directly to the processor bus<br/>
+            "Plug-and-play"<br/>
+            Signaling is a master/slave relationship
+        </li>
+        <li>
+            What are the three address spaces PCI supports?<br/>
+            Memory<br/>
+            I/O<br/>
+            Configuration: Each device has a configuration Read-Only Memory (ROM) that holds info about the device.<br/>
+             A 4bit command accompanies a data transfer to indicate which space is to be used.
+        </li>
+        <li>
+            What is an Initiator, Target and Transaction with PCI?<br>
+            Initiator: Bus Master(processor or DMA controller)<br/>
+            Target: addressed device<br/>
+            Transaction: data transferred
+        </li>
+        <li>
+            What is a Small Computer System Interface (SCSI)?<br/>
+            Reduced processor with pins<br/>
+            Address space not part of CPU address space.<br/>
+            Up to 8 or 16 devices connected to it<br/>
+            Acts as a DMAC<br/>
+            Can be either an initiator(for device) or a target(for CPU)<br/>
+            There are no address lines. Data lines are used to identify devices<br/>
+            Control of bus is decided by distributed arbitration<br/>
+            BSY signal (busy)<br/>
+        </li>
+        <li>
+        What is Universal Serial Bus(USB) ?<br/>
+        Collaborative standard<br/>
+        Supports two speeds: 1.5Mbps and 12Mbps<br/>
+        Speeds augmented through standards (e.g. Thunderbolt = 40Gbps)<br/>
+        Serial bus<br/>
+        USB uses a tree structure. Each hubs are connected to other hubs and I/O devices. This makes it faster to find a device. A hub copies a message from its upstream connection to all of its downstream connections<br/>
+        Inexpensive hubs since no real arbitration is required<br/>
+        When a device is connected to the system. it assumes address 0<br/>
+        When a device is detected, a handshake process takes place to determin the characteristics of the device<br/>
+        Two types of packets exchanged: control and data<br/>
+        Control packets: address, ack, errors, etc<br/>
+        Packets have PID that identifies its type (4bits transmitted twice)<br/>
+        Each hub checks for errors before forwarding<br/>
+        </li>
+        <li>
+        What is USB isochronous traffic?<br/>
+        Data transfers at fixed interval. USB creates 1ms frames initiated with Start Of Frame(SOF) packet.
+        </li>
+        <li>
+        What are memory cells?<br/>
+        1 bit = 1 cell. A memory address returns a selected group of cells.
+        </li>
+        <li>
+        What are the memory classes?<br/>
+        Primary / Secondary<br/>
+        Random Access (RAM) / Sequential Access (SAM)<br/>
+        Bipolar / CMOS / Magnetic / Optical Technologies<br/>
+        Static rentention / Dynamic rentention<br/>
+        R/WM / ROM / EPROM / EEPROM / FLASH / SSD
+        </li>
+        <li>
+        Sort the following memory types in order from cheap to expensive, slow to fast, storage space and Primary / Secondary: CPU Internal Registers, Primary cache, Secondary Cache, Main memory, Magnetic Disk, Magnetic Tape (or Optical Disk)<br/>
+        <img src="img/memorySort.jpg" width="500px"/>
+        </li>
+        <li>
+        What are Mercury tubes?<br/>
+        Old standard. Timed serial acoustic delay line<br/>
+        </li>
+        <li>
+        What are magnetic drums?<br/>
+        Lonng rotating cylinders with magnetic coating. Multiple R/W heads
+        </li>
+        <li>
+        What are magnetic cores?<br/>
+        Memory cells were ferro-magnetic disks. Wires wrapped around. Disk "remember" the direction of polarization when current in wires are activated.
+        </li>
+        <li>
+        What are stored charge?<br/>
+        Memory cells are capacitors that are either charged or not. Charges slowly leaks (Dynamic)
+        </li>
+        <li>
+        What is semiconductor memory?<br/>
+        Memory cells are flipflop transistors. Use Very Large Scale Integration (VLSI) technology for optimization. cells placed in 2-D array
+        </li>
+        <li>
+        Draw the organization of a 1024 bits memory chip<br/>
+        \(log_2(1024)=10\)bit of address. 5 first bits are row, 5 last are column. <br/>\(\sqrt{1024}=32bits\) so the array is 32x32. We need a 5->32 decoder for rows. <br/>Each column has two signals, \(c_n\ and\ c_n'\) so we can write and read each bit. The last 5 bits are connected to a bidrectional multiplexer 32&lt;-&gt;1 which also takes the R/W signal, a Chip Select signal (CS), the data i/o signal, and 64 signals to the memory cell array.<br/>
+        <img width="500" src="img/1024bitmem.jpg" />
+        </li>
+        <li>
+        What is static memory?<br/>
+        Static memory is a type of memory that keeps its content as long as power is applied (or volatile).<br/>
+        General structure: Two inverters back to back to form a latch<br/>
+        Two transistors are connected to the row and column(b and b') lines<br/>
+        Low poer consumption, fast access, 
+        </li>
+        <li>
+        What is dynamic memory?<br/>
+        Cell is formed with an isolation transistor and capacitor. The charge of the capacitor is the memory.  Reading a cell destroys its value and it must be restored.<br/>
+        Capacitor looses charge over time, so it must be refreshed at regular intervals<br/>
+        </li>
+        <li>
+        How do async DRAMs work?<br/>
+        Address broken up into row/column components to reduce pins<br/>
+        Control signals tell device which is to be strobed (Column or Row): Column Address Strobe (CAS) and Row Address Strobe (RAS)<br/>
+        Timing is controlled asynchronously. Must allow for delays in circuitry
+        </li>
+        <li>
+        Draw the internal organization of a \(2^{21}\times 8\) DRAM memory chip.<br/>
+        The first 9bits of address (512) are the column address, the 12 others (4096) are the row address.<br/>
+        Organization pretty similar to SRAM. There are Column and Row address latch with RAS and CAS signals as input before the decoders.<br/>
+        8bits of data instead of 1. If the 8bits are sequential, called Fast Page Mode.<br/>
+            <img src="img/dram.JPG" width="500"/>
+        </li>
+        <li>
+        How do synchronous DRAMs work?<br/>
+        Data and addresses buffered in latches.<br/>
+        All contents of Row are loaded into latch. If output is sequential, called Burst Mode.<br/>
+        Built-in refresh circuitry by rows every 64 ms.
+        </li>
+        <li>
+        Draw the internal organization of Sync DRAM.<br/>
+        <img src="img/syncdram.jpg" width="500" />
+        </li>
+        <li>
+        What is Latency?<br/>
+        Amount of time required to write/read a byte/word of data to/from memory<br/>
+        Single word = worst case. burst mode looks much better. Depends on over head to start transfer then time to transfer successive words.
+        </li>
+        <li>
+        What is Bandwidth?<br/>
+        Measure of how much data can be transferred per unit of time<br/>
+        Depends on speed of access data and number of bits that can be transferred in parallel
+        </li>
+        <li>
+        What is Double-Data-Rate SDRAM?<br/>
+        Uses two interleaved memory banks.<br/>
+        Transfer data on both edges of clock<br/>
+        Same latency as SDRAM, double bandwidth<br/>
+        Most effective in large block transfers<br/>
+        </li>
+        <li>
+        What is Content Addressable Memory (CAM) ?<br/>
+        Memory is searched and if present, memory returns list of locations where it can be found.<br/>
+        Ternary CAM: Addition of ability to include Don't Care for some bits in search.
+        </li>
+        <li>
+        What are multi-port memory systems?<br/>
+        Systems that allows simultaneous, multiple port access to memory. \(\text{\$\$\$\$\$}\)
+        </li>
+        <li>
+        What is RAMBUS?<br/>
+        Company that created fast system RDRAM (Rambus DRAM)<br/>
+        RDRAM uses differential signalling +- 0.3V which removes noise<br/>
+        Bus width is 8 or 16 bits<br/>
+        Uses packets for transfer
+        </li>
+        <li>
+        How does ROM work?<br/>
+        Memory can only be read. Mask Programmable at the factory. $$$ for setup but $ per chip<br/>
+        Fuse-programmable ROM: programmed in burner. $ setup but $$ per chip<br/>
+        </li>
+        <li>
+        How does Erasable PROM work (EPROM)?<br/>
+        Similar to ROM, but cells can be programmed to on or off.<br/>
+        Charge is injected into a region that is isolated<br/>
+        Contents can be erased by exposure to Ultraviolet light and reprogrammed.
+        </li>
+        <li>
+        What about Electronically Erasable PROM (EEPROM)?<br/>
+        Do not need to be removed from circuit. Apply a voltage to erase and program contents.<br/>
+        Flash: extension of EEPROM with cells written in blocks<br/>
+        PRAM: Phase-change RAM. 30 times faster than flash
+        </li>
+        <li>
+        How are memory systems implemented?<br/>
+        Memory chips are not large enough by themselves. Systems use a grid of chips<br/>
+        Memory access time is the time between access request and completion<br/>
+        Memory cycle time is time between successive operations<br/>
+        For consecutive memory locations, we need to wait each successive access to complete
+        </li>
+        <li>
+        What is the fastest systems implementation for consecutive memory locations?<br/>
+        Split word access in different modules, access locations simultaneously<br/>
+        
+        </li>
+        <li>
+        Given the task of an 8 word transfer to DRAM where initial access is 8 clock cycles and successive access is 4 cycles, how many clock cycles does it take?<br/>
+        \(8 + 7\times 4 = 36\)
+        </li>
+        <li>
+        What are the advantages and disadvantages of Consecutive words in consecutive modules?<br/>
+        Advanatage: FAST<br/>
+        Disadvantage: Must populate entire address space.
+        </li>
+        <li>
+        How does cache memory improve performance in memory systems?<br/>
+        Cache memory is small amount of fast memory places physically close to the processor.<br/>
+        Smaller than main memory.
+        </li>
+        <li>
+        What is a Direct Mapped Cache System?<br/>
+        To place main memory's content in Cache, we place main memory's block x in cache's block<br/>
+        x % N with N being the size of cache.<br/>
+        Slows the system down to replace them continuously.
+        </li>
+        <li>
+        What is Associative memory?<br/>
+        Blocks of memory can be places in any blocks of cache. More flexible<br/>
+        More efficient since we never replace blocks unless all blocks are in use.<br/>
+        Mapping hardware is more complex. To see if a word is in cache, all blocks must be checked.
+        </li>
+        <li>
+        What is Set-Associative mapping?<br/>
+        Compromise between Direct and Associative mapping. <br/>
+        (x) -> (x % N) + k<br/>
+        N is not the size of cache and k is any number.<br/>
+        When dealing with hardware, no need to check all blocks. Similar to hashtable
+        </li>
+        <li>
+        What are possible replacement algorithms?<br/>
+        Least Recently Used(LRU): 2 bit counter to keep track of block "age"<br/>
+        When hit occurs, referenced block couter becomes 0 and blocks with counters lower than referenced block are incremented, others remain the same.<br/>
+        When miss occurs, if set is not full, new block counter is 0 and all otherss incremented.<br/>
+        When miss occurs, and set is full, block with counter = 0x11 is replaces then counter set to 0 and others incremented<br/>
+        FIFO: worst performance<br/>
+        Random: Good performance
+        </li>
+        <li>
+        What is a cache hit, miss and what is the Average Memory Access time?<br/>
+        Hit: request is made for a word and it is present<br/>
+        Miss: not there<br/>
+        \(T_{avg} =hC + (1-h)M\)<br/>
+        Where<br/>
+        h : hit rate<br/>
+        C : Cache Access Time <br/>
+        M : Main memory Accesss Time<br/>
+        </li>
+        <li>
+        How can you decrease Tavg?<br/>
+        Increase hit rate (h): Larger block size, higher associativity, prefetching<br/>
+        Decrease C: Small and simple cache, decrease distance to cache, Faster tag checking<br/>
+        Reduce M : Optimal sub-block placement, early restart, Multiple levels of cache, Lock-up-free cache
+        </li>
+        <li>
+        Given a 10 clock cycles DRAM with 17 cycles to load a block into cache and 30% of instructions perform R/W. Assume a cache with0.95 hit rate for instructions and 0.9 for data and same miss penalty for R and W. How much time does an implementation without cache takes more than with cache?<br/>
+        \(\frac{\text{time without cache}}{\text{time with cache}}=\frac{130\times 10}{100(0.95\times 1 + 0.05\times17)+30(0.9\times1+0.1\times17)}\)
+        </li>
+        <li>
+        What is the Tavg for a two level cache?<br/>
+        \(T_{avg}=h_1C_1+(1-h_1)(h_2C_2)+(1-h_1)(1-h_2)M\)
+        </li>
+        <li>
+        What is a Write Buffer?<br/>
+        Temporary storage of write requests processed only when memory has no read requests.<br/>
+        Must compare read addresses to write addresses to prevent read of outdated data.
+        </li>
+        <li>
+        What is write-back protocol?<br/>
+        If data in block has not been written back to main memory and it must be replaced and we have a temporary write buffer, we can transfer that "dirty" block in buffer and load the new block in cache. Then the dirty block is written to main memory
+        </li>
+        <li>
+        What is Prefetching?<br/>
+        Add a prefetch instruction to processor when read miss would occur.<br/>
+        Can be done by prgrammer, compiler, even hardware.
+        </li>
+        <li>
+        What is Lockup-Free cache?<br/>
+        Prefetch can be as if it interferes with normal execution. e.g lock the cache by provoquing cache miss. We can introduce more cicuitry to allow processor to access cache while a miss is serviced. That means we can miss more than once. Needs a counter to keep track of miss that require service.
+        </li>
+        <li>
+        What is virtual memory?<br/>
+        If program does not fit in physical memory, parts of it must be kept on secondary storage (e.g. disk). CPU generates a virtual address or logical addresses.<br/>
+        Virtual Addresses: Relative to the program itself. Must be translated into physical addresses.<br/> It uses the Memory Management Unit (MMU)<br/>
+        </li>
+        <li>
+        How does Address translation works?<br/>
+        Divide program into fixed-size pages. In the Virtual Address, the upper bits are the Virtual Page Number and the Lower Bits are the location (offset) within page. Page Table has entries decribing statius of each page: Validity(is it loaded in main memory?), Modified while resident?, Access control of page?
+        </li>
+        <li>
+        What does the MMU do?<br/>
+        Used in every R/W operation. Complexity depends on Page table. Implemented as part of the CPU. Not all page tables can be kept in MMU, some must be kept in Main Memory. A portion is kept in MMU for most recently accessed pages : Translation Lookaside Buffer(a small cache)<br/>
+        With high probability, next address requested is sequential. We can use special registers to hold last virtual page number and physical page and we don't need to go to TLB
+        </li>
+        <li>
+        What is are Magnetic Hard Disks?<br/>
+        Secondary storage. Data is stored serially on the tracks. Error Correcting codes are used to add bits to the data to correct errors that may occur.
+        </li>
+        <li>
+        What is the Access time for Magnetic Hard Disks?<br/>
+        Seek time: Time required to move the heads to proper track<br/>
+        Latency time: Rotational delay<br/>
+        Access time = Seek Time + Latency time
+        </li>
+        <li>
+        What are Disk Controllers?<br/>
+        Interface between disk and system bus. Usually a DMA process.<br/>
+        Operations:<br/>
+        Seek, Read, Write, Error Check
+        </li>
+        <li>
+        What are RAID Disk arrays?<br/>
+        Split files in mulitple disks. Read operations are faster because all disks can work in parallel.
+        </li>
+        <li>
+        What are RAID configurations?<br/>
+        RAID0: Split (or stripe) data over 2 or more disks. Improves performance<br/>
+        RAID1: Mirrors data on a second disk: Data lost if both disks fail<br/>
+        RAID2: Data is striped at the bit level. Error correcting code is used to spread the data over several disks. If an error occurs, it can be corrected<br/>
+        RAID3: Byte level striping with a dedicated parity (error correction) disk<br/>
+        RAID4: Block level striping with a dedicated parity disk and can allow simultaneous access to different blocks.<br/>
+        RAID5: Block level striping with parity distributed over all of the disks<br/>
+        RAID6: Extension of RAID5 with another parity block. Allows two concurrent failures
+        </li>
+        <li>
+        What is optical storage?<br/>
+        CD-ROM, DVD-ROM, etc. Large capacity and cheap per bit
+        </li>
+        <li>
+        What is Diffie-Hellman Key Exchange?<br/>
+        Two users want to exchange a key. They both generate a private random number a and b and exchange a prime modulus(p) and a generator(g).<br/> Then user1 sends \(g^a\mod p\) to user2 and user2 sends \(g^b\mod p\) to user1. Now, each user take the result they received, <br/>let's say ka and kb and find the secret key. \(key = k_a^b\mod p = k_b^a\mod p=g^{ab}\mod p\)
+        </li>
+        <li>
+        What is a discrete logarithm problem?<br/>
+        Given \(y=x^a\mod p\), find a
+        </li>
+        <li>
+        Draw an array implementation of positive binary multiplication.<br/>
+        <img width="500" src="img/mult.JPG"/>
+        </li>
+        <li>
+        Draw the circuit for unsigned sequential multiplication<br/>
+        <img width="500" src="img/sequnsmul.JPG" />
+        </li>
+        <li>
+        What is Booth's algorithm?<br/>
+        \(X=\displaystyle\sum_{i=0}^{n-1}2^i(x_{i-1}-x_i)\)<br/>
+        So we define the Booth-recoded value \(m_{i}=x_{i-1}-x{i}\)
+        </li>
+        <li>
+        What is Bit-pair recoding?<br/>
+        For each odd index, use the following table.<br/>
+        <img width="500" src="img/table.JPG" />
+        </li>
+        <li>
+        What is restoring division?<br/>
+        Follow these steps:<br/>
+        1. Load numerator in register Q. Register A contains 0<br/>
+        2. Shift A and Q left one bit<br/>
+        3. Subtract M from A, and place it in A<br/>                                               4. If the sign of A is 1, set q0 to 0 and Aadd M back to A. Otherwise, set q0 to 1<br/>
+        Repeat 2-4 n times total
+        </li>
+        <li>
+        What is non-restoring division?<br/>
+        Follow these steps:<br/>
+        1. Load numerator in Register Q. Register A contains 0.<br/>
+        2. If the sign of A is 0, shift A and Q left one bit position and subtract M from A. otherwise, shift A and Q left and add M to A.<br/>
+        3. If the sign of A is 0, set q0 to 1. Otherwise set q0 to 0<br/>
+        4. Repeat 2-3 n times total<br/>
+        5. If the sign of A is 1, add M to A
+        </li>
+        <li>
+        What is the IEEE floating point standard?<br/>
+        32bits: first bit is sign. 8 second bits are exponent unsigned (E'). 23 bits are mantissa.<br/>
+        \(Value = \pm 1.M\times2^{E'-127}\)<br/>
+        64bit: first bit is sign. 11 second bits are exponent unsigned (E'). 52 bits are mantissa. <br/>
+        \(Value = \pm 1.M\times2^{E'-1023}\)<br/>
+        There is always a leading 1 before the mantissa. We just omit storing it.
+        Special values:<br/>
+        When E' = 0 and M = 0, \(\pm 0\) is represented<br/>
+        When E' = 255(or equivalent) and M = 0, \(\pm \infty\) is represented.<br/>
+        When E' = 0 and M is non zero, denormal numbers are represented. Their value is \(\pm0.M\times2^{-126}\)<br/>
+        When E'= 255 and M is non zero, the value is NaN which is the result of \(\sqrt{-1}\) or \(\frac{0}{0}\)
+        </li>
+        <li>
+        How can you do Addition/Subtraction on floating points?<br/>
+        Pick number with smaller exponents. shift mantissa right so that exponents match.<br/>
+        Perform addition/subtraction and normalize answer.
+        </li>
+        <li>
+        How can you do Multiplication on floating points?<br/>
+        Multiply mantissas and add exponent = E1' + E2' - bias
+        </li>
+        <li>
+        How can you divide floating points?<br/>
+        Subtract exponents and add bias. <br/>
+        Divide Mantissas, normalize result
+        </li>
+        <li>
+        How are floating points truncated?<br/>
+        Chopping: Just chop it off! Error is always negative, at most 1 LSB<br/>
+        Von Neumann Rounding: If guard bits are non zero, then increment LSB. Error is centered around value.<br/>
+        </li>
+        <li>
+        Draw a hardware implementation of floating point addition/subtraction unit.<br/>
+        <img width="500" src="img/float+-.JPG" />
+        </li>
+        <li>
+        What are the control signals required for a Basic CPU design for each of the internal register sets?<br/>
+        XXin: read and/or latch data from the bus<br/>
+        XXout: drives the bus with data from a register (one at a time)<br/>
+        Where XX is the register (e.g. MARin). The bus is the CPU's bus.
+        </li>
+        <li>
+        How does instruction execution work?<br/>
+        1. PC is pointing to start of instruction in memory<br/>
+        2. Transfer the content of that location into the Instruction Register (IR)<br/>
+        3. Circuitry translates the instruction code into a series of sequential operations
+        </li>
+        <li>
+        Draw an input/output gating for a register bit<br/>
+        <img width="500" src="img/registergating.JPG" />
+        </li>
+        <li>
+        How many registers do you need for the ALU?<br/>
+        Only 2. One for operand A and one for the result Z. The Operand B can be loaded directly from the bus and won't be written to Rz until the control signal Zin is active. There is also a Multiplexer between Ry (one of the inputs) and the ALU to select between the value Ry and an immediate value.
+        </li>
+        <li>
+        Draw the connections and control signals for register MDR between the Internal processor bus and the memory bus.<br/>
+        <img width="500" src="img/mdr.JPG" />
+        </li>
+        <li>
+        What are the MFC and WMFC control signals?<br/>
+        MFC: Stands for Memory Flow Control. It is sent from memory to the CPU when memory has finished an operation, so that CPU knows it is available on bus.<br/>
+        WMFC: Just wait for MFC
+        </li>
+    </ol>
+      </p>
+  </body>
+  <script>
+  renderMathInElement(document.body);
+</script>
+</html>
